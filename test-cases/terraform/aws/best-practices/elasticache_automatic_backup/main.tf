@@ -1,4 +1,5 @@
 resource "aws_elasticache_cluster" "default" {
+  # Drata: Specify [aws_elasticache_cluster.snapshot_retention_limit] to ensure sensitive data is only available when necessary. Setting snapshot retention to 0 will disable automatic backups
   cluster_id           = "cluster"
   engine               = "redis"
   node_type            = "cache.m5.large"
