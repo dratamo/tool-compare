@@ -23,6 +23,7 @@ module "vpc" {
 }
 
 resource "aws_lb" "default" {
+  # Drata: Default network security groups allow broader access than required. Specify [aws_lb.security_groups] to configure more granular access control
   internal           = true
   load_balancer_type = "application"
   name               = "alb"
