@@ -55,6 +55,7 @@ resource "aws_iam_role_policy_attachment" "lambda_logs" {
 }
 
 resource "aws_lambda_function" "test_lambda" {
+  # Drata: Configure [aws_lambda_function.vpc_config] to improve network monitoring capabilities and ensure network communication is restricted to trusted sources. If there is a need for your Lambda Function to access external endpoints this finding can be ignored
   filename      = "${path.module}/Archive.zip"
   function_name = local.lambda_name
   role          = aws_iam_role.iam_for_lambda.arn

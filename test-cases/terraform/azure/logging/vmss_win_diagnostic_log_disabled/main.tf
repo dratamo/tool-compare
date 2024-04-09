@@ -47,6 +47,7 @@ resource "azurerm_storage_account" "storacc" {
 }
 
 resource "azurerm_windows_virtual_machine_scale_set" "vmss" {
+  # Drata: Configure [azurerm_windows_virtual_machine_scale_set.zones] to improve infrastructure availability and resilience
   name                = "${local.resource_prefix}-vmss"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name

@@ -1,4 +1,5 @@
 resource "aws_rds_cluster" "default" {
+  # Drata: Specify [aws_rds_cluster.backup_retention_period] to ensure sensitive data is only available when necessary. Setting backup retention to 0 will disable automatic backups
   cluster_identifier      = "aurora-cluster-demo"
   engine                  = "aurora-mysql"
   engine_version          = "5.7.mysql_aurora.2.03.2"

@@ -23,10 +23,12 @@ module "vpc" {
 }
 
 resource "aws_lb" "default" {
-  internal           = false
+  # Drata: Default network security groups allow broader access than required. Specify [aws_lb.security_groups] to configure more granular access control
+  internal           = true
   load_balancer_type = "application"
   name               = "alb"
   subnets            = module.vpc.public_subnets
+  # Drata: Configure [aws_lb.subnets] to improve infrastructure availability and resilience. Define at least 2 subnets or availability zones on your load balancer to enable zone redundancy
 }
 
 resource "aws_alb" "default" {
@@ -37,10 +39,12 @@ resource "aws_alb" "default" {
 }
 
 resource "aws_lb" "disabled" {
-  internal           = false
+  # Drata: Default network security groups allow broader access than required. Specify [aws_lb.security_groups] to configure more granular access control
+  internal           = true
   load_balancer_type = "application"
   name               = "alb"
   subnets            = module.vpc.public_subnets
+  # Drata: Configure [aws_lb.subnets] to improve infrastructure availability and resilience. Define at least 2 subnets or availability zones on your load balancer to enable zone redundancy
 
   drop_invalid_header_fields = false
 }

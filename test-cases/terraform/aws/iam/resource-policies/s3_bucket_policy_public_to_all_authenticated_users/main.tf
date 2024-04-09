@@ -10,6 +10,7 @@ resource "aws_s3_bucket_policy" "bucket_2_policy" {
   bucket = aws_s3_bucket.public-bucket.id
 
   policy = <<POLICY
+  # Drata: Configure [aws_s3_bucket_policy.policy] to ensure secure protocols are being used to encrypt resource traffic
 {
   "Version":"2012-10-17",
   "Statement":[

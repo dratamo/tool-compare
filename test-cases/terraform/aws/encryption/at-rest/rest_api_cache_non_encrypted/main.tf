@@ -42,6 +42,7 @@ EOF
 }
 
 resource "aws_api_gateway_stage" "api_gw_stage" {
+  # Drata: Configure [aws_api_gateway_stage.access_log_settings] to ensure that security-relevant events are logged to detect malicious activity
   stage_name    = "prod"
   rest_api_id   = aws_api_gateway_rest_api.api_gw.id
   deployment_id = aws_api_gateway_deployment.api_gw_deploy.id

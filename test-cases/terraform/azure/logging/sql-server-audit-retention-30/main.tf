@@ -36,5 +36,5 @@ resource "azurerm_mssql_server_extended_auditing_policy" "example" {
   storage_endpoint                        = azurerm_storage_account.example.primary_blob_endpoint
   storage_account_access_key              = azurerm_storage_account.example.primary_access_key
   storage_account_access_key_is_secondary = false
-  retention_in_days                       = 30
+  retention_in_days                       = 365
 }
