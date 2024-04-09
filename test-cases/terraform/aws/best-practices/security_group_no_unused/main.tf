@@ -22,6 +22,7 @@ resource "aws_security_group" "allow_tls" {
     to_port          = 0
     protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
+    # Drata: Ensure that [aws_security_group.egress.ipv6_cidr_blocks] is explicitly defined and narrowly scoped to only allow traffic to trusted sources
     # Drata: Ensure that [aws_security_group.egress.cidr_blocks] is explicitly defined and narrowly scoped to only allow traffic to trusted sources
     ipv6_cidr_blocks = ["::/0"]
   }
