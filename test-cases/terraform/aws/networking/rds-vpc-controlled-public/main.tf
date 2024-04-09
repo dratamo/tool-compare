@@ -14,6 +14,7 @@ resource "aws_security_group" "nondefault" {
     protocol = "TCP"
     to_port = 65000
     cidr_blocks = ["0.0.0.0/0"]
+  # Drata: Ensure that [aws_security_group.ingress.cidr_blocks] is explicitly defined and narrowly scoped to only allow traffic from trusted sources
   }
 }
 
