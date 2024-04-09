@@ -12,6 +12,7 @@ locals {
 }
 
 resource "aws_cloudfront_distribution" "s3_distribution" {
+  # Drata: Ensure that [aws_cloudfront_distribution.web_acl_id] is defined to inspect incoming requests and protect against common web application attacks. Ignore this finding if custom Web ACL policies are attached through AWS WAF resource
   origin {
     domain_name = aws_s3_bucket.b.bucket_regional_domain_name
     origin_id   = local.s3_origin_id
