@@ -71,6 +71,7 @@ resource "azurerm_lb_rule" "example" {
 }
 
 resource "azurerm_windows_virtual_machine_scale_set" "example" {
+  # Drata: Configure [azurerm_windows_virtual_machine_scale_set.zones] to improve infrastructure availability and resilience
   name                = "${local.resource_prefix}-vmss"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
