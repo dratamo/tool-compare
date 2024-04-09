@@ -113,7 +113,7 @@ resource "aws_security_group" "db" {
 resource "aws_db_instance" "test" {
   identifier = "tf-test-db"
   allocated_storage = "5"
-  multi_az = "false"
+  multi_az = true
   engine = "mysql"
   instance_class = "db.t2.small"
   username = "admin"
