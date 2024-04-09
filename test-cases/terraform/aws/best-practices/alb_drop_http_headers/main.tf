@@ -27,6 +27,7 @@ resource "aws_lb" "default" {
   load_balancer_type = "application"
   name               = "alb"
   subnets            = module.vpc.public_subnets
+  # Drata: Configure [aws_lb.subnets] to improve infrastructure availability and resilience. Define at least 2 subnets or availability zones on your load balancer to enable zone redundancy
 }
 
 resource "aws_alb" "default" {
