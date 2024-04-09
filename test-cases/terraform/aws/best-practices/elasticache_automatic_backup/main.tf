@@ -1,4 +1,5 @@
 resource "aws_elasticache_cluster" "default" {
+  # Drata: Default network security groups allow broader access than required. Specify [aws_elasticache_cluster.security_group_ids] to configure more granular access control
   # Drata: Specify [aws_elasticache_cluster.snapshot_retention_limit] to ensure sensitive data is only available when necessary. Setting snapshot retention to 0 will disable automatic backups
   cluster_id           = "cluster"
   engine               = "redis"
