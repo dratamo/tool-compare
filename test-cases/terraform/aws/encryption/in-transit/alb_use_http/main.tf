@@ -47,6 +47,7 @@ resource "aws_subnet" "subnet2" {
 }
 
 resource "aws_lb" "test" {
+  # Drata: Default network security groups allow broader access than required. Specify [aws_lb.security_groups] to configure more granular access control
   name = "test123"
   load_balancer_type = "application"
   subnets = [aws_subnet.subnet1.id, aws_subnet.subnet2.id]
