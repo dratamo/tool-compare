@@ -37,7 +37,7 @@ resource "aws_alb" "default" {
 }
 
 resource "aws_lb" "disabled" {
-  internal           = false
+  internal           = true
   load_balancer_type = "application"
   name               = "alb"
   subnets            = module.vpc.public_subnets
