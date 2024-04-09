@@ -22,7 +22,7 @@ resource "azurerm_mssql_server" "my-sql-server" {
   name                          = "${local.resource_prefix}sqlserver"
   resource_group_name           = azurerm_resource_group.tests-resource-group.name
   location                      = azurerm_resource_group.tests-resource-group.location
-  version                       = "12.0"
+  version                       = 1.2
   administrator_login           = "4dm1n157r470r"
   administrator_login_password  = "4-v3ry-53cr37-p455w0rd"
   public_network_access_enabled = false
