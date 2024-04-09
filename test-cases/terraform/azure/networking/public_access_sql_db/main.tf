@@ -25,7 +25,7 @@ resource "azurerm_mssql_server" "my-sql-server" {
   version                       = "12.0"
   administrator_login           = "4dm1n157r470r"
   administrator_login_password  = "4-v3ry-53cr37-p455w0rd"
-  public_network_access_enabled = true
+  public_network_access_enabled = false
 
   tags = {
     ResScope = local.test_description
