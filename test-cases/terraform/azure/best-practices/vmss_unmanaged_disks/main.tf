@@ -100,6 +100,7 @@ resource "azurerm_virtual_machine_scale_set" "vmss1" {
 }
 
 resource "azurerm_virtual_machine_scale_set" "vmss2" {
+  # Drata: Default network security groups allow broader access than required. Specify [azurerm_virtual_machine_scale_set.network_profile.network_security_group_id] to configure more granular access control
   name                = "${local.resource_prefix}-vmss2"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
