@@ -85,7 +85,7 @@ resource "azurerm_iothub" "iothub" {
     source         = "DeviceMessages"
     condition      = "true"
     endpoint_names = ["export"]
-    enabled        = true
+    enabled        = false
   }
 
   route {
