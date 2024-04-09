@@ -1,4 +1,5 @@
 resource "aws_elb" "test" {
+  # Drata: Default network security groups allow broader access than required. Specify [aws_elb.security_groups] to configure more granular access control
   # Drata: Configure [aws_elb.access_logs.enabled] to ensure that security-relevant events are logged to detect malicious activity
   name = "test-lb-tf"
   availability_zones = ["us-west-2a", "us-west-2b", "us-west-2c"]
